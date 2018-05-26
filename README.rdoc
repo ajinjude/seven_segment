@@ -1,0 +1,69 @@
+==Seven Segment - Easily convert to and from Seven Segment Display digits.
+
+Easily convert numbers to seven segment digits (like in analog calculators) and seven segment strings to numbers.
+
+Supports positive and negative integers, floating points, octal numbers and hexadecimal numbers.
+
+== Install
+  gem install 'seven_segment'
+
+== Usage
+  require 'seven_segment'
+
+  puts SevenSegment.to_segment(123)
+  puts SevenSegment.to_segment(0x71b0e)
+
+  puts SevenSegment.to_numbers("    _     _ \n  | _|   |_ \n  ||_  .  _|")
+  puts SevenSegment.to_numbers("       _  _     _  _  _  _  _  _ \n __  | _| _||_||_ |_   ||_||_|| |\n     ||_  _|  | _||_|  ||_| _||_|")
+
+  # Alternatively, you can use encode to convert to segment digits and decode to convert to numbers.
+
+  puts SevenSegment.encode(123)
+  puts SevenSegment.encode(0x71b0e)
+
+  puts SevenSegment.decode("    _     _ \n  | _|   |_ \n  ||_  .  _|")
+  puts SevenSegment.decode("       _  _     _  _  _  _  _  _ \n __  | _| _||_||_ |_   ||_||_|| |\n     ||_  _|  | _||_|  ||_| _||_|")
+
+  
+Output:
+      _  _ 
+    | _| _|
+    ||_  _|
+      _  _  _  _  _ 
+  |_||_ |_ |_   ||_|
+    ||_| _||_|  ||_|
+  12.5
+  -1234567890
+      _  _ 
+    | _| _|
+    ||_  _|
+      _  _  _  _  _ 
+  |_||_ |_ |_   ||_|
+    ||_| _||_|  ||_|
+  12.5
+  -1234567890
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2018 Ajin Jude
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
