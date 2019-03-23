@@ -26,11 +26,8 @@ class SevenSegment
     segment.transpose.map { |s| s.join }.join("\n")
   end
 
-  def self.encode(number)
-    SevenSegment.to_segment(number)
-  end
-
-  def self.decode(segment)
-    SevenSegment.to_numbers(segment)
+  class << self
+    alias encode to_segment
+    alias decode to_numbers
   end
 end
